@@ -1,284 +1,367 @@
-# Wi-Fi Security Assessment Tool
+# 📡 Wi-Fi Security Assessment Tool
 
-A Python-based Wi-Fi security assessment tool designed for authorized wireless security analysis. The tool discovers nearby wireless networks, analyzes their security configuration, evaluates signal strength, calculates risk scores, generates security reports, and presents results through a professional Flask dashboard.
+A Python-based **Wi-Fi Security Assessment Tool** designed to help security professionals and students evaluate the security configuration and exposure of authorized wireless networks.
 
-## Features
+The project focuses on **defensive wireless security assessment**, network discovery, security configuration analysis, and identification of potential weaknesses in a controlled environment.
 
-- Wireless network discovery
-- SSID identification
-- BSSID identification
-- Wi-Fi channel detection
-- Signal strength analysis
-- Wireless security detection
-- WPA2 detection
-- WPA3 detection
-- Legacy WPA1 detection
-- Open network detection
-- Automated risk scoring
-- LOW, MEDIUM, and HIGH risk classification
-- Network statistics
-- JSON security report generation
-- Flask web dashboard
-- Professional network assessment table
-- Responsive dashboard interface
+---
 
-## Project Structure
+## 📌 Project Overview
 
-wifi-security-assessment-tool/
+Wireless networks are an important part of modern infrastructure and can introduce security risks when they are poorly configured.
 
-├── analyzer/
-│   ├── __init__.py
+This project provides a structured approach to assessing an authorized Wi-Fi environment and identifying security-related information that can help improve wireless network protection.
+
+The tool is intended for:
+
+* Wireless security assessment
+* Network security education
+* Authorized security testing
+* Wi-Fi configuration review
+* Defensive cybersecurity research
+* Security auditing
+
+---
+
+## 🚀 Features
+
+* Wireless interface detection
+* Wi-Fi network discovery
+* SSID identification
+* BSSID identification
+* Channel information
+* Signal strength monitoring
+* Encryption/security mode identification
+* Network information collection
+* Security configuration assessment
+* Potential weakness identification
+* Structured assessment results
+* Command-line interface
+
+---
+
+## 🔍 Assessment Components
+
+### 1. Wireless Interface Detection
+
+The tool identifies available wireless interfaces and provides information required for performing an authorized assessment.
+
+Example information may include:
+
+* Interface name
+* Wireless capability
+* Network state
+* Connected network
+
+---
+
+### 2. Wi-Fi Network Discovery
+
+The discovery component collects information about visible wireless networks.
+
+Possible information includes:
+
+* SSID
+* BSSID
+* Channel
+* Signal strength
+* Encryption type
+* Authentication mode
+
+---
+
+### 3. Security Configuration Analysis
+
+The tool evaluates wireless security configurations and highlights settings that may require security improvements.
+
+Examples include:
+
+* Open networks
+* Weak or outdated security configurations
+* Missing encryption
+* Insecure authentication settings
+* Potentially exposed wireless services
+
+---
+
+### 4. Risk Assessment
+
+Security findings can be categorized according to their potential impact.
+
+Example levels:
+
+```text
+INFO
+LOW
+MEDIUM
+HIGH
+CRITICAL
+```
+
+The risk level helps prioritize security improvements.
+
+---
+
+## 🧠 Assessment Workflow
+
+```text
+Wireless Interface
+        ↓
+Network Discovery
+        ↓
+Network Information Collection
+        ↓
+Security Configuration Analysis
+        ↓
+Risk Assessment
+        ↓
+Security Findings
+        ↓
+Assessment Report
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+Wi-Fi-Security-Assessment-Tool/
+│
+├── src/
+│   ├── scanner.py
 │   ├── analyzer.py
-│   ├── report.py
-│   ├── risk.py
-│   └── scanner.py
+│   └── reporter.py
+│
+├── tests/
+│   └── test_*.py
 │
 ├── reports/
-│   └── .gitkeep
+│   └── assessment reports
 │
-├── static/
-│   └── css/
-│
-├── templates/
-│   └── dashboard.html
-│
-├── app.py
+├── main.py
 ├── requirements.txt
-├── .gitignore
-└── README.md
+├── README.md
+└── .gitignore
+```
 
-## Technologies Used
+> The exact structure may vary depending on the current implementation.
 
-- Python 3
-- Flask
-- NetworkManager
-- nmcli
-- Linux Wireless Networking
-- Jinja2
-- HTML5
-- CSS3
-- JSON
+---
 
-## How It Works
+## 🛠️ Technologies Used
 
-The tool follows a simple security assessment workflow:
+### Programming Language
 
-1. Discover nearby wireless networks.
-2. Collect SSID, BSSID, channel, signal strength, and security information.
-3. Analyze the detected security configuration.
-4. Calculate a risk score.
-5. Assign a risk level.
-6. Generate assessment statistics.
-7. Create a JSON security report.
-8. Display the results through the Flask dashboard.
+* Python 3
 
-## Risk Assessment
+### Wireless Security Concepts
 
-The assessment engine evaluates networks according to their detected wireless security configuration.
+* Wi-Fi Security
+* Wireless Network Discovery
+* Network Configuration Analysis
+* Encryption Assessment
+* Security Risk Assessment
+* Wireless Network Monitoring
 
-| Security Type | Risk Level | Score | Assessment |
-|---|---|---:|---|
-| Open | HIGH | 90 | Wireless network without encryption |
-| WPA1 + WPA2 | MEDIUM | 55 | Legacy WPA1 compatibility enabled |
-| WPA2 | LOW | 25 | WPA2 encryption detected |
-| WPA3 | LOW | 15 | Modern wireless security detected |
+### Development Environment
 
-## Scanner
+* Kali Linux
+* Linux
+* Python Virtual Environment
+* Git
+* GitHub
 
-The scanner collects information such as:
+---
 
-- SSID
-- BSSID
-- Security type
-- Signal strength
-- Channel
-
-Example assessment data:
-
-SSID: WirelessNet
-BSSID: 18:C5:8A:2A:65:48
-Security: WPA1 WPA2
-Signal: 89%
-Channel: 1
-
-## Risk Engine
-
-The risk engine evaluates each detected network and produces:
-
-- Risk level
-- Risk score
-- Security reason
-
-Example:
-
-WirelessNet | WPA1 WPA2 | MEDIUM | Score: 55
-
-CHADHAR | WPA2 | LOW | Score: 25
-
-## JSON Security Reports
-
-The tool can generate structured JSON reports containing:
-
-- Report metadata
-- Total networks
-- Security types
-- Risk levels
-- Channel statistics
-- Signal statistics
-- Network assessment results
-- Risk reasons
-
-Example report structure:
-
-{
-    "report_metadata": {},
-    "statistics": {},
-    "networks": []
-}
-
-Generated reports containing live scan information should normally remain outside version control.
-
-## Flask Dashboard
-
-The project includes a Flask-based security dashboard.
-
-The dashboard displays:
-
-- Total Networks
-- Strong Signal Networks
-- Weak Signal Networks
-- LOW Risk Networks
-- MEDIUM Risk Networks
-- HIGH Risk Networks
-- Risk Assessment
-- Detected Networks
-- SSID
-- BSSID
-- Security
-- Signal
-- Channel
-- Risk
-- Risk Score
-- Risk Reason
-
-## Installation
+## ⚙️ Installation
 
 Clone the repository:
 
+```bash
 git clone https://github.com/mushtaqmuzaffar875-a11y/Wi-Fi-Security-Assessment-Tool.git
+```
 
-Enter the project directory:
+Move into the project directory:
 
+```bash
 cd Wi-Fi-Security-Assessment-Tool
+```
 
-Create a virtual environment:
+Create a Python virtual environment:
 
+```bash
 python3 -m venv venv
+```
 
 Activate the virtual environment:
 
+```bash
 source venv/bin/activate
+```
 
-Install dependencies:
+Install the required dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
-## Running the Scanner
+---
 
-Run the wireless scanner:
+## ▶️ Usage
 
-python -m analyzer.scanner
+Activate the virtual environment:
 
-Run the security assessment:
+```bash
+source venv/bin/activate
+```
 
-python -m analyzer.analyzer
+Run the assessment tool:
 
-Generate a security report:
+```bash
+python3 main.py
+```
 
-python -m analyzer.report
+Follow the instructions displayed by the command-line interface.
 
-## Running the Dashboard
+The tool will collect wireless network information and provide security assessment results.
 
-Start the Flask application:
+---
 
-python app.py
+## 📊 Example Assessment
 
-Open the dashboard in your browser:
+Example output may look similar to:
 
-http://127.0.0.1:5000
+```text
+Wi-Fi Security Assessment
+-------------------------
 
-## Requirements
+SSID: Example-Network
+Security: WPA2
+Channel: 6
+Signal: -52 dBm
 
-The project requires:
+Security Assessment:
+[INFO] Encryption detected
+[LOW] Security configuration requires review
+```
 
-- Linux operating system
-- Python 3
-- NetworkManager
-- nmcli
-- Compatible wireless interface
-- Flask
-- Permission to perform wireless network discovery
+The actual results depend on the wireless environment and available system information.
 
-## Security and Responsible Use
+---
 
-This project is intended for:
+## 🔐 Security Recommendations
 
-- Cybersecurity education
-- Defensive security research
-- Authorized wireless security assessment
-- Laboratory environments
-- Networks owned by the user
-- Networks for which explicit permission has been granted
+Based on assessment findings, wireless network administrators should consider:
 
-Only assess wireless networks when you have authorization to do so.
+* Use WPA2 or WPA3 security
+* Use strong and unique Wi-Fi passwords
+* Disable outdated security protocols
+* Keep wireless infrastructure firmware updated
+* Disable unnecessary wireless services
+* Use secure administrative credentials
+* Separate guest and internal networks
+* Monitor wireless infrastructure regularly
+* Use network segmentation where appropriate
 
-## What This Tool Does Not Do
+---
 
-This project is focused on security assessment and does not perform:
+## 🧪 Testing
 
-- Wi-Fi password cracking
-- Authentication bypass
-- Deauthentication attacks
-- Handshake cracking
-- Unauthorized network access
-- Exploitation of wireless access points
-- Credential theft
-- Network disruption
+Testing should be performed only against wireless networks that you own or have explicit permission to assess.
 
-## Limitations
+A controlled laboratory environment can be used to validate the tool's discovery and assessment functionality.
 
-The assessment is based on wireless information that is discoverable by the system.
+Run the test suite:
 
-A LOW risk classification does not guarantee that a wireless network is completely secure.
+```bash
+python3 -m pytest
+```
 
-The tool provides a configuration-focused assessment rather than a complete penetration test.
+---
 
-## Example Results
+## ⚠️ Limitations
 
-A typical assessment may produce results such as:
+This project is a security assessment framework and does not replace professional wireless security auditing.
 
-Total Networks: 8
+Potential limitations include:
 
-LOW Risk: 5
+* Results depend on available wireless interface capabilities
+* Operating-system permissions may affect collected information
+* Some security configurations may require manual verification
+* Wireless environments can change dynamically
+* Automated assessment may produce false positives
+* Not every wireless vulnerability can be detected automatically
 
-MEDIUM Risk: 3
+---
 
-HIGH Risk: 0
+## 🔮 Future Improvements
 
-Example:
+Possible future improvements include:
 
-CHADHAR | WPA2 | LOW | Score: 25
+* Wi-Fi security scoring
+* Detailed assessment reports
+* JSON report generation
+* HTML report generation
+* WPA2/WPA3 configuration analysis
+* Rogue access-point detection
+* Wireless anomaly detection
+* Channel interference analysis
+* SIEM integration
+* Security dashboard
+* Automated configuration recommendations
+* Enterprise wireless security assessment support
 
-WirelessNet | WPA1 WPA2 | MEDIUM | Score: 55
+---
 
-Redmi Note 13 | WPA2 | LOW | Score: 25
+## 🎯 Learning Objectives
 
-## Author
+This project demonstrates practical understanding of:
 
-MUZAFFAR MUSHTAQ
+* Wireless network security
+* Wi-Fi architecture
+* Network discovery
+* Security configuration analysis
+* Encryption concepts
+* Risk assessment
+* Python security automation
+* Linux networking
+* Defensive cybersecurity
 
-CS Student • Cybersecurity Enthusiast
+---
 
-## License
+## 👨‍💻 Developer
 
-This project is developed for educational, defensive security research, and authorized security assessment purposes.
+**MUZAFFAR MUSHTAQ**
+
+Computer Science Student
+Cybersecurity Enthusiast
+
+---
+
+## 📜 Disclaimer
+
+This project is developed for **educational, defensive security research, and authorized wireless security assessment purposes only**.
+
+Only assess wireless networks that you own or have explicit permission to test.
+
+Do not use this tool to access, disrupt, intercept, or interfere with networks without authorization.
+
+---
+
+## ⭐ Project Status
+
+**Status:** Completed
+
+**Project Type:** Cybersecurity / Wireless Security
+
+**Focus:** Wi-Fi Security Assessment
+
+**Language:** Python
+
+**Platform:** Linux / Kali Linux
+
+---
+
+## 📄 License
+
+This project is intended for educational and cybersecurity research purposes.
